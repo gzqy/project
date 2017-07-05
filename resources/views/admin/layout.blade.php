@@ -345,10 +345,6 @@
             </span>
           </a>
           <ul class="treeview-menu">
-
-            <li class="active"><a href="{{url('./admin/user/add')}}"><i class="fa fa-circle-o"></i> 用户添加</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-
             <li class="active"><a href="{{ url('/admin/user/add')}}"><i class="fa fa-circle-o"></i> 用户添加</a></li>
             <li><a href="{{ url('/admin/user/index')}}"><i class="fa fa-circle-o"></i> 用户列表</a></li>
 
@@ -363,21 +359,12 @@
             <span>无限分类</span>
 
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
+              
             </span>
           </a>
           <ul class="treeview-menu">
-
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-
             <li><a href="{{ url('/admin/category')}}"><i class="fa fa-circle-o"></i> 无限分类</a></li>
             <li><a href=""><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-
           </ul>
         </li>
         <li>

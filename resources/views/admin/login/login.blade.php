@@ -70,9 +70,9 @@
 
     <!-- /.social-auth-links -->
 
-    <a href="#">忘记密码?</a><br>
+    <a href="{{ url('/admin/forgot')}}">忘记密码?</a><br>
 
-  </div>
+  </div>  
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
