@@ -352,14 +352,10 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-files-o"></i>
-
-            <span>Layout Options</span>
-
+          <i class="fa fa-fw fa-cc-jcb"></i> 
             <span>无限分类</span>
-
-            <span class="pull-right-container">
-              
+        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -369,16 +365,21 @@
         </li>
         <li>
           <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+            <i class="fa fa-th"></i> <span>测试-z</span>
+             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href=""><i class="fa fa-circle-o"></i> 用户</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i> 用户</a></li>
+
+          </ul>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
+            <span>发帖模块-y</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -393,7 +394,7 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>UI Elements</span>
+            <span>网站配置-y</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -409,7 +410,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Forms</span>
+            <i class="fa fa-edit"></i> <span>其他-y</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -422,7 +423,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-table"></i> <span>Tables</span>
+            <i class="fa fa-table"></i> <span>测试-h</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -432,28 +433,10 @@
             <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
         </li>
-        <li>
-          <a href="pages/calendar.html">
-            <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="pages/mailbox/mailbox.html">
-            <i class="fa fa-envelope"></i> <span>Mailbox</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
-              <small class="label pull-right bg-red">5</small>
-            </span>
-          </a>
-        </li>
+       
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Examples</span>
+            <i class="fa fa-folder"></i> <span>测试-h</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -503,11 +486,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
-        <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+       
       </ul>
     </section>
     <!-- /.sidebar -->

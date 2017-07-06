@@ -67,19 +67,14 @@ class UserController extends Controller
     	$data['updated_at']=$time;
     	//dd($data);
     
-    	//执行添加
+    	
 
-    	\DB::table('users')->insert(
-   		 $data
-		);
-    }
+    	 }
 
 
 
-
-    	$res=\DB::table('users')->insert(
-   		 $data
-		);
+        //执行添加
+    	$res=\DB::table('users')->insert($data);
         if($res)
         {
             return back();

@@ -59,3 +59,8 @@ Route::get('/admin/link/{token}','Admin\ForgotController@link');
 Route::get('/admin/newpass/{id}','Admin\ForgotController@newpass');
 Route::get('/admin/info','Admin\ForgotController@info');
 Route::post('/admin/updatepass','Admin\ForgotController@updatepass');
+
+
+//搜索功能
+Route::get('/home/se','Home\SeController@index');
+Route::post('/home/dose','Home\SeController@dose');
