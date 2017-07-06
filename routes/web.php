@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 //路由群组
 Route::group(['middleware'=>'adminlogin'],function(){
+<<<<<<< HEAD
 
 //后台主页
 Route::get('/admin/user/add','Admin\UserController@add');
@@ -60,6 +61,18 @@ Route::get('/admin/gg/xg','Admin\GuangGaoController@xg');
 
 Route::post('/admin/gg/xg','Admin\GuangGaoController@doxg');
 
+=======
+	//后台主页
+	Route::get('/admin/user/add','Admin\UserController@add');
+	Route::get('/admin/index','Admin\IndexController@index');
+	Route::post('/admin/user/insert','Admin\userController@insert');
+
+
+	Route::get('/admin/user/edit/{id}',"Admin\UserController@edit");
+	Route::post('/admin/user/update',"Admin\UserController@update");
+	Route::get('/admin/user/delete/{id}',"Admin\UserController@delete");
+	Route::get('/admin/user/index',"Admin\UserController@index");
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
 });
 
 
@@ -80,3 +93,21 @@ Route::post('/admin/user/ajaxrename','Admin\UserController@ajaxRename');
 //分类管理
 Route::resource('/admin/category',"Admin\categoryController");
 
+<<<<<<< HEAD
+=======
+//发送邮件
+Route::get('/send','Admin\MailController@send');
+
+//忘记密码功能,
+Route::get('/admin/forgot','Admin\ForgotController@forgot');
+Route::post('/admin/sendemail','Admin\ForgotController@sendemail');
+Route::get('/admin/link/{token}','Admin\ForgotController@link');
+Route::get('/admin/newpass/{id}','Admin\ForgotController@newpass');
+Route::get('/admin/info','Admin\ForgotController@info');
+Route::post('/admin/updatepass','Admin\ForgotController@updatepass');
+
+
+//搜索功能
+Route::get('/home/se','Home\SeController@index');
+Route::post('/home/dose','Home\SeController@dose');
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671

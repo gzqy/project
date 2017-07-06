@@ -56,8 +56,13 @@ return [
     */
 
     'from' => [
+<<<<<<< HEAD
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
+=======
+        'address' => env('MAIL_FROM_ADDRESS', 'zhangqiuyuzhang@163.com'),
+        'name' => env('MAIL_FROM_NAME', '知乎论坛'),
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
     ],
 
     /*

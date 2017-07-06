@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<<<<<<< HEAD
   
           @foreach($yy  as $key => $value)
               <link rel="shortcut icon" href="/uploads/avatar/{{$value->logo}}" type="image/x-icon" />
@@ -13,6 +14,12 @@
          @endforeach
        
         <meta name="csrf-token" content="{{ csrf_token() }}">
+=======
+  <title>{{ config('app.name')}} | Dashboard</title>
+
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>AdminLTE 2 | Dashboard</title>
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -390,7 +397,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
+<<<<<<< HEAD
             <li><a href=""><i class="fa fa-circle-o"></i>帖子列表</a></li>
+=======
+            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
           </ul>
         </li>
         <li class="treeview">
@@ -402,19 +416,38 @@
             </span>
           </a>
           <ul class="treeview-menu">
+<<<<<<< HEAD
             <li><a href="{{url('/admin/pz')}}"><i class="fa fa-circle-o"></i>网站配置</a></li>
+=======
+            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
+<<<<<<< HEAD
             <i class="fa fa-edit"></i> <span>广告</span>
+=======
+            <i class="fa fa-edit"></i> <span>其他-y</span>
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
+<<<<<<< HEAD
             <li><a href="{{url('/admin/gg')}}"><i class="fa fa-circle-o"></i>广告添加</a></li>
             <li><a href="{{url('/admin/gg/list')}}"><i class="fa fa-circle-o"></i>广告列表</a></li>
+=======
+            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
           </ul>
         </li>
         <li class="treeview">
@@ -491,6 +524,7 @@
 
 
   <!-- /.content-wrapper -->
+<<<<<<< HEAD
   <div class="footer" style="text-align:center">
   @foreach($yy as $key => $value)
     
@@ -537,6 +571,15 @@
 </div>
 
 
+=======
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.3.8
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

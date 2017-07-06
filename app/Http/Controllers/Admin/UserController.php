@@ -67,6 +67,7 @@ class UserController extends Controller
     	$data['updated_at']=$time;
     	//dd($data);
     
+<<<<<<< HEAD
     	//执行添加
 
     	\DB::table('users')->insert(
@@ -80,6 +81,16 @@ class UserController extends Controller
     	$res=\DB::table('users')->insert(
    		 $data
 		);
+=======
+    	
+
+    	 }
+
+
+
+        //执行添加
+    	$res=\DB::table('users')->insert($data);
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
         if($res)
         {
             return back();
