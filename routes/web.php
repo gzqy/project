@@ -61,6 +61,19 @@ Route::get('/admin/info','Admin\ForgotController@info');
 Route::post('/admin/updatepass','Admin\ForgotController@updatepass');
 
 
+//前台模块
+
 //搜索功能
 Route::get('/home/se','Home\SeController@index');
 Route::post('/home/dose','Home\SeController@dose');
+
+
+//前台登录
+Route::get('/home/login','Home\LoginController@login');
+Route::post('/home/dologin','Home\LoginController@dologin');
+
+//前台注册
+Route::get('/home/regist','Home\RegistController@regist');
+
+//伪 -前台主页
+Route::get('/home/index','Home\IndexController@index');

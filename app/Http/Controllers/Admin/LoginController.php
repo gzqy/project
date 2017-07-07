@@ -16,20 +16,21 @@ class LoginController extends Controller
     //dologin
     public function dologin(Request $request)
     {
-    	$data = $request->except("_token");
+     
+     	$data = $request->except("_token");
 
-    	//验证是否记住我    	
-    	$remember_token = \Cookie::get('remember_token');
-    	// dd($remember_token);
-    	if($remember_token){
+     	//验证是否记住我    	
+     	$remember_token = \Cookie::get('remember_token');
+     	// dd($remember_token);
+     	if($remember_token){
     		
-    		 $admin = \DB::table('users')->where('remember_token',$remember_token)->first();
+     		 $admin = \DB::table('users')->where('remember_token',$remember_token)->first();
 
-    		// //存入session
-			 session(['master'=>$admin]);
+     		// //存入session
+			  session(['master'=>$admin]);
 
     	
-    		return redirect('/admin/index')->with(['info'=>'登陆成功']);
+   		return redirect('/admin/index')->with(['info'=>'登陆成功']);
     	}
     	
 
