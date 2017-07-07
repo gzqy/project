@@ -18,23 +18,7 @@ Route::get('/', function () {
 
 
 //路由群组
-Route::group(['middleware'=>'adminlogin'],function(){
-<<<<<<< HEAD
-
-//后台主页
-Route::get('/admin/user/add','Admin\UserController@add');
-
-Route::get('/admin/index','Admin\IndexController@index');
-
-Route::post('/admin/user/insert','Admin\userController@insert');
-
-Route::get('/admin/user/edit/{id}',"Admin\UserController@edit");
-
-Route::post('/admin/user/update',"Admin\UserController@update");
-
-Route::get('/admin/user/delete/{id}',"Admin\UserController@del");
-
-Route::get('/admin/user/index',"Admin\UserController@index");
+// Route::group(['middleware'=>'adminlogin'],function(){
 
 
 //网站配置
@@ -61,19 +45,19 @@ Route::get('/admin/gg/xg','Admin\GuangGaoController@xg');
 
 Route::post('/admin/gg/xg','Admin\GuangGaoController@doxg');
 
-=======
-	//后台主页
-	Route::get('/admin/user/add','Admin\UserController@add');
-	Route::get('/admin/index','Admin\IndexController@index');
-	Route::post('/admin/user/insert','Admin\userController@insert');
+
+//后台主页
+Route::get('/admin/user/add','Admin\UserController@add');
+Route::get('/admin/index','Admin\IndexController@index');
+Route::post('/admin/user/insert','Admin\userController@insert');
 
 
-	Route::get('/admin/user/edit/{id}',"Admin\UserController@edit");
-	Route::post('/admin/user/update',"Admin\UserController@update");
-	Route::get('/admin/user/delete/{id}',"Admin\UserController@delete");
-	Route::get('/admin/user/index',"Admin\UserController@index");
->>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
-});
+Route::get('/admin/user/edit/{id}',"Admin\UserController@edit");
+Route::post('/admin/user/update',"Admin\UserController@update");
+Route::get('/admin/user/delete/{id}',"Admin\UserController@delete");
+Route::get('/admin/user/index',"Admin\UserController@index");
+
+// });
 
 
 
@@ -93,8 +77,7 @@ Route::post('/admin/user/ajaxrename','Admin\UserController@ajaxRename');
 //分类管理
 Route::resource('/admin/category',"Admin\categoryController");
 
-<<<<<<< HEAD
-=======
+
 //发送邮件
 Route::get('/send','Admin\MailController@send');
 
@@ -112,7 +95,7 @@ Route::post('/admin/updatepass','Admin\ForgotController@updatepass');
 //搜索功能
 Route::get('/home/se','Home\SeController@index');
 Route::post('/home/dose','Home\SeController@dose');
-<<<<<<< HEAD
+
 
 
 //前台登录
@@ -124,6 +107,4 @@ Route::get('/home/regist','Home\RegistController@regist');
 
 //伪 -前台主页
 Route::get('/home/index','Home\IndexController@index');
-=======
->>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
->>>>>>> e504c883d609d43960106262f2cbe6b2971c9a21
+
