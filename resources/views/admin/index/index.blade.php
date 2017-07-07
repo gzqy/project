@@ -31,8 +31,13 @@
           <div class="small-box bg-aqua">
             <div class="inner">
               <h3>150</h3>
+<<<<<<< HEAD
+              
+                <p>New Orders</p>
+=======
 
               <p>New Orders</p>
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -93,6 +98,15 @@
         <!-- Left col -->
         <section class="col-lg-7 connectedSortable">
           <!-- Custom tabs (Charts with tabs)-->
+<<<<<<< HEAD
+          
+          @foreach($yy  as $key => $value)
+              
+              <p>{{$value->webname}}</p>
+
+          @endforeach
+=======
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
           <div class="nav-tabs-custom">
             <!-- Tabs within a box -->
             <ul class="nav nav-tabs pull-right">

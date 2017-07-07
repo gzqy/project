@@ -19,6 +19,11 @@
 |
 */
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
 require __DIR__.'/../bootstrap/autoload.php';
 
 /*
@@ -53,6 +58,25 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
+<<<<<<< HEAD
+
+ 
+$res = \DB::table('config')->select('status')->get()->first();
+
+if($res->status == 0)
+{
+
+	die("网站维护中");
+
+}
+
 $response->send();
 
 $kernel->terminate($request, $response);
+
+
+=======
+$response->send();
+
+$kernel->terminate($request, $response);
+>>>>>>> 2e3fc6b53cb106d497c0f15cc6821f965d30e671
