@@ -83,7 +83,7 @@ class LoginController extends Controller
     {
     	$request->session()->forget('master');
 
-    	return redirect('/admin/login')->with(['info'=>'退出成功']);
+    	return redirect('/home/login')->with(['info'=>'退出成功']);
     }
 
 }

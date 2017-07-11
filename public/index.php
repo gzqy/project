@@ -57,14 +57,14 @@ $response = $kernel->handle(
 
 
  
-// $res = \DB::table('config')->select('status')->get()->first();
+$res = \DB::table('config')->select('status')->get()->first();
 
-// if($res->status == 0)
-// {
+if($res->status == 0)
+{
 
-// 	die("网站维护中");
+	die("网站维护中");
 
-// }
+}
 
 $response->send();
 

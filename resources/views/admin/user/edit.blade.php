@@ -6,12 +6,12 @@
     <section class="content-header">
       <h1>
         用户管理
-        <small>添加</small>
+        <small>修改</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>主页 </a></li>
         <li><a href="#">用户管理</a></li>
-        <li class="active">添加</li>
+        <li class="active">修改</li>
       </ol>
     </section>
 
@@ -23,7 +23,7 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">快速添加</h3>
+              <h3 class="box-title">快速修改</h3>
             </div>
 
             <!-- /.box-header -->
@@ -32,7 +32,7 @@
               {{ csrf_field() }}
               <div class="form-group">
                   <label for="exampleInputName">用户名</label>
-                  <input type="text" value="{{ old('name') }}"  name="name"  class="form-control" id="exampleInputEmail1" placeholder="请输入用户名">
+                  <input type="text" value="{{ $data->name }}"  name="name"  class="form-control" id="exampleInputEmail1" placeholder="请输入用户名">
                 </div>
               <div class="box-body">
                           @if (count($errors) > 0)
@@ -46,7 +46,7 @@
 @endif
                 <div class="form-group">
                   <label for="exampleInputEmail1">邮箱</label>
-                  <input type="email" value="{{ old('email') }}" name="email" class="form-control" id="exampleInputEmail1" placeholder="请输入邮箱">
+                  <input type="email" value="{{  $data->email  }}" name="email" class="form-control" id="exampleInputEmail1" placeholder="请输入邮箱">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">密码</label>

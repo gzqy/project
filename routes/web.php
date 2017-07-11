@@ -61,7 +61,7 @@ Route::get('/admin/user/index',"Admin\UserController@index");
 
 
 
-//登录
+//后台登录
 Route::get('/admin/login',"Admin\LoginController@login");
 Route::post('/admin/dologin',"Admin\LoginController@dologin");
 Route::get('/admin/logout',"Admin\LoginController@logout");
@@ -96,7 +96,7 @@ Route::post('/admin/updatepass','Admin\ForgotController@updatepass');
 Route::get('/home/se','Home\SeController@index');
 Route::post('/home/dose','Home\SeController@dose');
 
-
+//7.7
 
 //前台登录
 Route::get('/home/login','Home\LoginController@login');
@@ -104,7 +104,60 @@ Route::post('/home/dologin','Home\LoginController@dologin');
 
 //前台注册
 Route::get('/home/regist','Home\RegistController@regist');
+Route::post('/home/doregist','Home\RegistController@doregist');
 
 //伪 -前台主页
 Route::get('/home/index','Home\IndexController@index');
+
+
+
+
+//用户中心
+//普通修改
+Route::get('/home/user/index','Home\UserController@index');
+Route::post('/home/user/update','Home\UserController@update');
+
+//详情修改
+Route::get('/home/user/det','Home\UserController@dndex');
+Route::post('/home/user/dupdate','Home\UserController@dupdate');
+
+
+//退出
+Route::get('/home/logout',"Home\LoginController@logout");
+
+
+
+//7-11
+//意见反馈
+Route::get('/home/pro',"Home\LoginController@pro");
+Route::post('/home/dopro',"Home\LoginController@dopro");
+
+
+//意见处理
+Route::get('/admin/pro',"Admin\ProController@index");
+Route::get('/admin/pro/del/{id}',"Admin\ProController@del");
+
+
+//候-11
+Route::get('home/fatie','Home\TieziController@index');
+
+
+Route::get('/home/liebiao','Home\TieziController@liebiao');
+
+
+Route::get('home/xiangqing','Home\HuitieController@index');
+
+
+Route::post('home/tiezi/insert','Home\TieziController@insert');
+
+
+Route::post('/chuantu', 'Home\TieziController@chuantu');
+
+
+
+//z 加好友
+Route::get('/home/frid','Home\FriController@index');
+Route::post('/home/dofr','Home\FriController@dofr');
+
+
 

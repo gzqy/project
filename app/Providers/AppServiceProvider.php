@@ -18,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
+      
         //网站配置数据共享
        $data = \DB::table('config')->get();
         View::share('yy',$data);

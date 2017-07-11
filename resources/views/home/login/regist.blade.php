@@ -50,13 +50,27 @@
 
 </div>
 <div class="view view-signup selected" data-za-module="SignUpForm">
-<form class="zu-side-login-box" action="/home/dologin"  method="POST">
+<form class="zu-side-login-box" action="/home/doregist"  method="POST">
 <input type="password" hidden> 
 {{csrf_field()}}
 <div class="group-inputs">
+@if(session('info'))
+	<div class="name input-wrapper">
+	{{ session('info') }}
+	</div>
+@endif
 
+  @if (count($errors) > 0)
+    <div class="name input-wrapper">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 <div class="name input-wrapper">
-<input required type="text" name="name" aria-label="姓名" placeholder="姓名">
+<input required type="text" name="name" aria-label="姓名" placeholder="姓名（不少于 3 位）">
 </div>
 <div class="email input-wrapper">
 
@@ -69,6 +83,9 @@
 <input required type="password" name="re_password" aria-label="重复密码" placeholder="与密码相同" autocomplete="off">
 </div>
 
+<div class="input-wrapper">
+<input required type="email" name="email" aria-label="邮箱" placeholder="请填写正确的邮箱" autocomplete="off">
+</div>
 
 
 </div>
@@ -78,7 +95,7 @@
 </form>
 
 <p class="agreement-tip">点击「注册」按钮，即代表你同意<a href="/terms" target="_blank">《知乎协议》</a></p>
-
+<p class="agreement-tip"><a href="{{url('/home/login')}}">登录</a></p>
 </div>
 </div>
 </div>

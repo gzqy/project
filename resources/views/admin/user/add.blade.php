@@ -35,15 +35,17 @@
                   <input type="text" value="{{ old('name') }}"  name="name"  class="form-control" id="exampleInputEmail1" placeholder="请输入用户名">
                 </div>
               <div class="box-body">
-                          @if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+
+              @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+              @endif
+              
                 <div class="form-group">
                   <label for="exampleInputEmail1">邮箱</label>
                   <input type="email" value="{{ old('email') }}" name="email" class="form-control" id="exampleInputEmail1" placeholder="请输入邮箱">

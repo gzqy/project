@@ -66,15 +66,13 @@
         </div>
         <!-- /.col -->
       </div>
-
     </form>
 
     <!-- /.social-auth-links -->
 
-    <a href="{{ url('/admin/forgot')}}">忘记密码?</a><br>
+    <a href="#">忘记密码?</a><br>
 
-  </div>  
-
+  </div>
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
@@ -100,7 +98,6 @@
         $url = $url + "/" + Math.random();
         document.getElementById('c2c98f0de5a04167a9e427d883690ff6').src=$url;
   }
-
 </script>
 </body>
 </html>

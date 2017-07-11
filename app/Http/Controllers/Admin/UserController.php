@@ -74,10 +74,12 @@ class UserController extends Controller
 
 
 
-        //执行添加
-    	$res=\DB::table('users')->insert($data);
+        //执行添加用户
+    	$id=\DB::table('users')->insertGetId($data);
+        
 
-        if($res)
+
+        if($id)
         {
             return back();
         }else
@@ -102,6 +104,7 @@ class UserController extends Controller
        $data= \DB::table('users')->where('id',$id)->first();
         return view('admin.user.edit',['title'=>'用户编辑','data'=>$data]);
     }
+    
     public function update(Request $request)
     {
         $data=$request->except('_token');

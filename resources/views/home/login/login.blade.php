@@ -15,7 +15,7 @@
 <link rel="canonical" href="http://www.zhihu.com" />
 <meta id="znonce" name="znonce" content="053344737a594a11ae62a21788046f70">
 
-<script src="{{ asset('/admin/home/js/instant.14757a4a_5.js') }}"></script>
+<script src="{{ asset('home/assets/js/instant.14757a4a_5.js') }}"></script>
 </head>
 <body class="zhi ">
 
@@ -64,7 +64,7 @@
 <div class="input-wrapper">
 <input required type="password"  name="code" class="form-control" placeholder="验证码">
         <a onclick="javascript:re_captcha();" ><img src="{{ URL('kit/captcha/1') }}"  alt="验证码" title="刷新图片" width="100" height="40" id="c2c98f0de5a04167a9e427d883690ff6" border="0"></a>
-  </div>
+</div>
 
 
 </div>
@@ -72,14 +72,16 @@
 <button class="sign-button submit" type="submit">登录知乎</button>
 </div>
 </form>
-
 <p class="agreement-tip">点击「登录」按钮，即代表你同意<a href="#" target="_blank">《知乎协议》</a></p>
 <p class="agreement-tip"><a href="{{url('/home/regist')}}">注册</a></p>
+<p class="agreement-tip"><a href="{{url('/home/pro')}}">意见反馈</a></p>
 </div>
 </div>
 </div>
 
 </div>
+
+
 <div class="footer">
 
 <span>&copy; 2017 知乎</span>
@@ -119,11 +121,11 @@
 <script type="text/json" class="json-inline" data-name="disabled_components">["back_to_top"]</script>
 <script type="text/json" class="json-inline" data-name="current_user">["","","","-1","",0,0]</script>
 <script type="text/json" class="json-inline" data-name="env">["zhihu.com","comet.zhihu.com",false,null,false,false]</script>
-<script src="{{ asset('/admin/home/js/vendor.cb14a042_5.js') }}"></script>
-<script src="{{ asset('/admin/home/js/base.ecc1e150_2.js') }}"></script>
+<script src="{{ asset('home/assets/js/vendor.cb14a042_5.js') }}"></script>
+<script src="{{ asset('home/assets/js/base.ecc1e150_2.js') }}"></script>
 
-<script src="{{ asset('/admin/home/js/common.d6c46a16_2.js') }}"></script>
-<script src="{{ asset('/admin/home/js/page-index.352df081_2.js') }}"></script>
+<script src="{{ asset('home/assets/js/common.d6c46a16_2.js') }}"></script>
+<script src="{{ asset('home/assets/js/page-index.352df081_2.js') }}"></script>
 <meta name="entry" content="ZH.entrySignPage" data-module-id="page-index">
 </body>
 

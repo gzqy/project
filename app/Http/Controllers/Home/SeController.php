@@ -23,14 +23,13 @@ class SeController extends Controller
     		return back()->with(['info' =>'无相关信息']);
     	}
 
-
     	//dd($request->all());
         $num=$request->input('num',10);
         
        
         //查询数据库
 
-        $data=\DB::table('post')->where('tid','like','%'.$res->id.'%')->paginate($num);
+        $data=\DB::table('post')->where('tid',$res->id)->paginate($num);
         //dd($data);
 
         // return view('admin.user.index',['request'=>$request->all(),'title'=>'搜索列表','data'=>$data]);

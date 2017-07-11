@@ -22,26 +22,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-<<<<<<< HEAD
-=======
-
-      
-
-      
-
-       
-
-       
-
-        
 
 
-       
-
-      
-
-       
->>>>>>> 30431d8469645a41f30be48b6c287e16c5030016
     }
 
     /**

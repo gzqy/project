@@ -18,11 +18,11 @@ class LoginController extends Controller
     	$data = $request->except("_token");
 
     	//验证码是否正确
-    	$code = session('code');
-    	if($code != $data['code'])
-    	{
-    		return back()->with(['info'=>'验证码错误']);
-    	}
+    	// $code = session('code');
+    	// if($code != $data['code'])
+    	// {
+    	// 	return back()->with(['info'=>'验证码错误']);
+    	// }
 
     	//查询用户
     	$user=\DB::table('users')->where('name',$data['name'])->first();
@@ -45,7 +45,7 @@ class LoginController extends Controller
     	session(['master'=>$user]);
 
     	//跳转后台主页
-    	return redirect('/home/index')->with(['info'=>'登录成功']);	
+    	return redirect('/home/user/index')->with(['info'=>'登录成功']);	
     
 
   
@@ -58,5 +58,25 @@ class LoginController extends Controller
     	$request->session()->forget('master');
 
     	return redirect('/home/login')->with(['info'=>'退出成功']);
+    }
+
+    //意见反馈
+     public function pro()
+    {
+        return view('home.login.pro');
+    }
+
+
+    //执行意见处理
+    public function dopro(Request $request)
+    {   
+
+        $data = $request->except("_token");
+
+        $resd=\DB::table('report')->insert($data);
+        
+        return redirect('/home/login')->with(['info'=>'提交成功']);
+
+
     }
 }
