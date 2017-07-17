@@ -33,13 +33,13 @@
 
 <div class="view view-signin" data-za-module="SignInForm">
 
-
+	 
 </div>
 <div class="view view-signup selected" data-za-module="SignUpForm">
 
 
 
-
+	<h1>请输入名称</h1>
 
 	<form class="zu-side-login-box" action="/home/dofr"  method="POST">
 	{{csrf_field()}}
@@ -47,15 +47,16 @@
 	        <p class="text-danger">{{session('info')}}</p>
 	 @endif
 	<div class="group-inputs">
-
+	
 	<div class="name input-wrapper">
-	<input required type="text" name="name"  placeholder="用户名">
+
+	<input required type="text" name="name" >
 	</div>
 
 	</div>
 	<div class="button-wrapper command">
 	<button class="sign-button submit" type="submit">提交</button>
-
+	</form>
 	</div>
 </div>
 </div>

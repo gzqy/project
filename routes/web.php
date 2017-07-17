@@ -30,7 +30,8 @@ Route::get('/admin/peizhi/pz','Admin\PeiZhiController@pz');
 
 
 //广告管理
-
+//执行广告添加
+Route::post('/admin/dogg','Admin\GuangGaoController@dogg');
 //广告添加
 Route::get('/admin/gg','Admin\GuangGaoController@gg');
 
@@ -155,9 +156,73 @@ Route::post('/chuantu', 'Home\TieziController@chuantu');
 
 
 
-//z 加好友
+// 加好友
 Route::get('/home/frid','Home\FriController@index');
 Route::post('/home/dofr','Home\FriController@dofr');
 
+Route::get('/home/flist','Home\FriController@flist');
+Route::get('/home/delfrd/{id}','Home\FriController@del');
+Route::get('/home/addfrd/{id}','Home\FriController@add');
+Route::get('/home/slist','Home\FriController@slist');
 
+
+//发私信
+Route::post('/home/send','Home\sendController@index');
+Route::get('/home/pmlist','Home\sendController@plist');
+Route::get('/home/delpm/{id}','Home\sendController@delpm');
+
+
+//7.11
+//举报信箱
+ Route::get('/admin/jubao','Admin\JBController@jb');
+
+
+ //删除举报
+ Route::get('/admin/del/{id}','Admin\JBController@delete');
+
+
+//举报面板
+ Route::get('/admin/jb','Admin\JBController@index');
+
+
+
+
+
+
+ //7.12yp
+ //商品添加
+ Route::get('/admin/sp','Admin\SPController@insert');
+ 
+ Route::post('/admin/dosp','Admin\SPController@doinsert');
+
+
+ //商品列表
+ Route::get('/admin/sp/list','Admin\SPController@list');
+
+
+ //商品删除
+ Route::get('/admin/sp/del/{id}','Admin\SPController@del');
+
+//前台商品页面
+ Route::get('/home/sp/index','Home\SPController@index');
+
+
+ //添加友情链接
+ Route::get('/admin/py','Admin\PyController@insert');
+
+
+ //友情链接列表
+ Route::get('/admin/py/list','Admin\PyController@list');
+
+
+ //删除友情链接
+ Route::get('/admin/py/del/{id}','Admin\PyController@del');
+
+
+ //修改友情链接
+ Route::get('/admin/py/xg/{id}','Admin\PyController@xg');
+
+
+ //执行修改
+ Route::post('/admin/py/doxg/{id}','Admin\PyController@doxg');
 

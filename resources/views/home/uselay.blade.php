@@ -9,7 +9,7 @@
    
     
     <link rel="stylesheet" href="{{ asset('/admin/adminlte/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/home/assets/css/font-awesome.min.css')}}">
+    
     <!-- Custom styles for our template -->
     <link rel="stylesheet" href="{{ asset('/home/assets/css/bootstrap-theme.css')}}" media="screen">
     <link rel="stylesheet" href="{{ asset('/home/assets/css/style.css')}}">
@@ -18,6 +18,21 @@
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
+    <style>
+    .example-modal .modal {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      left: auto;
+      display: block;
+      z-index: 1;
+    }
+
+    .example-modal .modal {
+      background: transparent !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -87,12 +102,14 @@
                            </li>
                         <li><a href="{{url('/home/user/det')}}">详细信息</a><br>
                            </li>
-                        <li><a href="">Bootstrap</a><br>
+                        <li><a href="{{url('/home/flist')}}">好友处理</a><br>
                            </li>
-                        <li><a href="">Clean Template</a><br>
+                        <li><a href="{{url('/home/frid')}}">添加好友</a><br>
                            </li>
-                        <li><a href="">Premium Quality</a><br>
-                          </li>
+                        <li><a href="{{url('/home/slist')}}">好友列表</a><br>
+                           </li>
+                        <li><a href="{{url('/home/pmlist')}}">私信</a><br>
+                           </li>
                     </ul>
                 </div>
 
@@ -146,41 +163,26 @@
     </footer>
 
     
-    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-    <!-- 拖拉用的script开始 -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
-    <!-- 拖拉用的script 结束-->
 
-    <script src="assets/js/modernizr-latest.js"></script> 
-    <script type='text/javascript' src='assets/js/jquery.min.js'></script>
-    <script type='text/javascript' src='assets/js/fancybox/jquery.fancybox.pack.js'></script>
-    
-    <script type='text/javascript' src='assets/js/jquery.mobile.customized.min.js'></script>
-    <script type='text/javascript' src='assets/js/jquery.easing.1.3.js'></script> 
-    <script type='text/javascript' src='assets/js/camera.min.js'></script> 
-    <script src="assets/js/bootstrap.min.js"></script> 
-    <script src="assets/js/custom.js"></script>
     <script>
-        jQuery(function(){
+        // jQuery(function(){
             
-            jQuery('#camera_wrap_4').camera({
-                height: '600',
-                loader: 'bar',
-                pagination: false,
-                thumbnails: false,
-                hover: false,
-                opacityOnGrid: false,
-                imagePath: 'assets/images/'
-            });
+        //     jQuery('#camera_wrap_4').camera({
+        //         height: '600',
+        //         loader: 'bar',
+        //         pagination: false,
+        //         thumbnails: false,
+        //         hover: false,
+        //         opacityOnGrid: false,
+        //         imagePath: 'assets/images/'
+        //     });
 
-        });
+        // });
     </script>
     <!--  -->
    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-    <script src="{{ asset('/home/assets/js/jquery.min.js')}}"></script>
+    <script src="{{ asset('/home/assets/js/jquery-2.2.3.min.js')}}"></script>
     <script src="{{ asset('/home/assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('/home/assets/js/custom.js')}}"></script>
+    @yield('js')
 </body>
 </html>

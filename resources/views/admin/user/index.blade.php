@@ -123,7 +123,7 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-	$(".name").one('dblclick',aaa);
+	$(".name").on('dblclick',aaa);
 function aaa(){
 		var td=$(this);
 

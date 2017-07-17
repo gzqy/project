@@ -8,17 +8,45 @@ use App\Http\Controllers\Controller;
 class GuangGaoController extends Controller
 {
     //
-    public function gg(Request $request)
+         public function gg(Request $request)
     {
 
-    	$data=$request->except('_token');
-   
 
-		$res = \DB::table('ad') -> insert($data);
+        return view('admin.news.gg');
+    }
 
-    	return view('admin.news.gg');
+    public function dogg(Request $request)
+    {
+        $data=$request->except('_token');
 
-    	
+        //处理图片
+        if($request->hasFile('adlogo'))
+        {
+            if($request->file('adlogo')->isValid())
+            {
+                //获取扩展名
+                $ext=$request->file('adlogo')->extension();
+
+                //随机文件名
+                $filename=time().mt_rand(10000,99999).'.'.$ext;
+
+                $request->file('adlogo')->move('./uploads/avatar',$filename);
+            
+                //添加data数据
+                $data['adlogo']=$filename;
+            }
+        }
+       
+          //执行添加
+        $res=\DB::table('ad')->insert($data);
+
+        if($res)
+        {
+            return back();
+        }else
+        {
+            return back()->with(['info'=>'添加失败']);
+        }
     }
 
 

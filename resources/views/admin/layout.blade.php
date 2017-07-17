@@ -265,7 +265,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ asset('/admin/adminlte/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+              <img src="/uploads/avatar/{{session('master')->avatar}}" class="user-image" alt="User Image">
 
               <span class="text-danger">{{session('master')->name}}</span>
 
@@ -273,7 +273,7 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{ asset('/admin/adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                <img src="/uploads/avatar/{{session('master')->avatar}}"  class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer
@@ -323,10 +323,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('/admin/adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+              <!-- Menu Body -->
+          <img src="/uploads/avatar/{{session('master')->avatar}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{session('master')->name}}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -365,40 +366,42 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ url('/admin/category')}}"><i class="fa fa-circle-o"></i> 无限分类</a></li>
-            <li><a href="{{ url('/admin/pro')}}"><i class="fa fa-circle-o"></i> 问题反馈</a></li>
+           <ul class="treeview-menu">
+            <li><a href="{{url('/admin/pro')}}"><i class="fa fa-circle-o"></i>问题列表</a></li>
           </ul>
         </li>
-        <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>测试-z</span>
-             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href=""><i class="fa fa-circle-o"></i> 用户</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i> 用户</a></li>
-
-          </ul>
-        </li>
-        <li class="treeview">
+          
+          <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>发帖模块-y</span>
+            <i class="fa fa-table"></i> <span>举报反馈</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i>帖子列表</a></li>
+            <li><a href="{{url('/admin/jubao')}}"><i class="fa fa-circle-o"></i>举报列表</a></li>
+             <li><a href="{{url('/admin/jb')}}"><i class="fa fa-circle-o"></i>举报栏</a></li>
           </ul>
         </li>
-        <li class="treeview">
+
+
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>商品添加</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{url('/admin/sp')}}"><i class="fa fa-circle-o"></i>添加商品</a></li>
+             <li><a href="{{url('/admin/sp/list')}}"><i class="fa fa-circle-o"></i>商品列表</a></li>
+          </ul>
+        </li>
+
+ <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>网站配置-y</span>
+            <span>网站配置</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -406,14 +409,15 @@
           <ul class="treeview-menu">
             <li><a href="{{url('/admin/pz')}}"><i class="fa fa-circle-o"></i>网站配置</a></li>
 
+
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
 
+
             <i class="fa fa-edit"></i> <span>广告</span>
 
-            <i class="fa fa-edit"></i> <span>其他-y</span>
 
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -423,6 +427,45 @@
             <li><a href="{{url('/admin/gg')}}"><i class="fa fa-circle-o"></i>广告添加</a></li>
             <li><a href="{{url('/admin/gg/list')}}"><i class="fa fa-circle-o"></i>广告列表</a></li>
 
+
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>友情链接</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{url('/admin/py')}}"><i class="fa fa-circle-o"></i> 添加友情链接</a></li>
+            <li><a href="{{url('/admin/py/list')}}"><i class="fa fa-circle-o"></i>友情链接列表</a></li>
+          </ul>
+        </li>
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>举报反馈</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{url('/admin/jubao')}}"><i class="fa fa-circle-o"></i>举报列表</a></li>
+             <li><a href="{{url('/admin/jb')}}"><i class="fa fa-circle-o"></i>举报栏</a></li>
+          </ul>
+        </li>
+
+
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>商品添加</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{url('/admin/sp')}}"><i class="fa fa-circle-o"></i>添加商品</a></li>
+             <li><a href="{{url('/admin/sp/list')}}"><i class="fa fa-circle-o"></i>商品列表</a></li>
           </ul>
         </li>
         <li class="treeview">
