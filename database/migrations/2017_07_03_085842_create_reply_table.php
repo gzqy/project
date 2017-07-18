@@ -18,7 +18,10 @@ class CreateReplyTable extends Migration
             $table->increments('id');
             $table->tinyInteger('hid');
             $table->tinyInteger('tid');
-            $table->string('content');
+            $table->varchar('content');
+			$table->varchar('ctime');
+			$table->varchar('zannum');
+			$table->varchar('shoucang');
             $table->timestamps();  
         });
     }

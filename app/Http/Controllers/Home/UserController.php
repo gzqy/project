@@ -11,7 +11,7 @@ class UserController extends Controller
     public function index()
     {	
     	$id = session('master')->id;
-    	$data= \DB::table('users')->join('userd', 'users.id', '=', 'userd.uid')->where('users.id',$id)->first();
+    	$data= \DB::table('users')->where('users.id',$id)->first();
 
     	  
     	return view('home.user.index',['data'=>$data]);

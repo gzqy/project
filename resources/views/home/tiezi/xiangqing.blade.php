@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>详情</title>
-
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-
-  </head>
-  <body>
+@extends('home.hou')
+@section('content')
 
     <div class="container-fluid">
 	<div class="row">
@@ -44,18 +29,18 @@
 			<div class="row">
 				<div class="col-md-3">
 					<h3>
-						文章标题
+						{{$data->title}}
 					</h3>
 				</div>
 				<div class="col-md-9">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-1">
-					<img height="40px"; alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/">
+				<div class="col-md-2">
+					<img height="70px"; width="100%" alt="Bootstrap Image Preview" src="/uploads/avatar/{{ $data->avatar }}">
 				</div>
-				<div class="col-md-11">
-					<a>名字</a>
+				<div class="col-md-10">
+					<a>{{$data->name}}</a>
 					<p>名言</p>
 				</div>
 				
@@ -65,26 +50,11 @@
 					<div class="row">
 						
 							<div class="thumbnail">
-								<img alt="Bootstrap Thumbnail Third" src="http://lorempixel.com/output/sports-q-c-600-200-1.jpg">
+								<img width="100%" alt="Bootstrap Thumbnail Third" src="/uploads/pic/{{ $data->headimg }}">
 								<div class="caption">
 									
 									<p>
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
-										内容内容内容内容内容内容内容
+										{{$data->content}}
 									</p>
 									
 								</div>
@@ -94,18 +64,20 @@
 			</div>
 			<div class="row">
 				<div class="col-md-2">
-					<h3>
-						发布时间
+					<h4>
+					
+						{{$data->ctime}}
+					</h4>
+				</div>
+				<div class="col-md-2">
+					<h3 class="pinglun">
+						<img style="width:40px" src="/images/pinglun1.png">
 					</h3>
 				</div>
 				<div class="col-md-2">
 					<h3>
-						评论
-					</h3>
-				</div>
-				<div class="col-md-2">
-					<h3>
-						点赞
+						<img id="zan" src="/images/weidian.png" style="width:40px" value="a" zannum="0">
+						
 					</h3>
 				</div>
 				<div class="col-md-2">
@@ -115,7 +87,7 @@
 				</div>
 				<div class="col-md-2">
 					<h3>
-						收藏
+						<img id="shoucang" src="/images/shoucang.png" style="width:40px">
 					</h3>
 				</div>
 				<div class="col-md-2">
@@ -124,19 +96,42 @@
 					</h3>
 				</div>
 			</div>
-			<div><p></p></div>
-			<div class="row">
-				<div class="col-md-4">
-				</div>
-				<div class="col-md-4">
-					<a><h3>
-						查看所有评论
-					</h3></a>
-				</div>
-				<div class="col-md-4">
-				</div>
+			<div id="ping" class="row" style="display:none">
+				<form role="form" method="post" action="{{ url('/home/huitie/pinglun')}}">
+				
+					{{csrf_field()}}
+              		<input type="hidden" name="hid" value="{{session('master')->id}}">
+              		<input type="hidden" name="tid" value="{{$data->id}}">
+
+					<textarea name="content" id="" cols="84" rows="4"></textarea>
+					<div class="col-md-5"></div><input type="submit"  value="评论">
+				</form>
+
 			</div>
+			<div><p></p></div>
+
+			@foreach($res as $key=>$val)
+			<div class="row">
+				<span>
+					<img src="/uploads/avatar/{{$val->avatar}}" style="width:60px">
+				</span>
+
+				
+					<a>
+							
+						{{$val->name}} 
+					
+
+					</a>
+				
+					<span style="color:#ff9955;border:1px; background:#FFF;width:200px;height:200px; border:1px; background:#FFF">
+
+						{{$val->content}}
+					</span>
+			</div>
+			@endforeach
 		</div>
+		
 		<div class="col-md-3">
 			<div class="row">
 				<div class="col-md-6">
@@ -185,10 +180,10 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-2">
-					<img width="50px"alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/">
+				<div class="col-md-4">
+					<img height="70px"; width="100%" alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/">
 				</div>
-				<div class="col-md-10">
+				<div class="col-md-8">
 					<a>名字</a>
 					<p>名言</p>
 				</div>
@@ -252,8 +247,70 @@
 	</div>
 </div>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
-  </body>
-</html>
+   
+	    <script>
+	    $(".pinglun").on('click',function(){
+	    	// alert('222');
+	    	$("#ping").attr({style:'display:""'});
+	    });
+
+
+	    $('#zan').on('click',function(){
+	    	//点击之后先判断后修改,最后计数
+	    	var x =$("#zan").attr('value');
+	    	var zannum =$('#zan').attr('zannum')*1;
+	    	
+	    	switch(x){
+	    		case "a" : 
+	    			$('#zan').attr({src:"/images/dian.png"});
+	    			$('#zan').attr({value:"b"});
+	    			zannum+=1;
+	    			console.log(zannum);
+	    		
+	    			// $.ajax('/home/huitie/dianzan',{
+
+	    			// 	Type:'GET',
+	    			// 	Data:{'zannum':zannum},
+	    			// 	success:function(data)
+	    			// 	{
+			    	// 				if (data) 
+			    	// 				{
+			    	// 					alert("data");
+			    	// 				}else{
+
+			    	// 				}
+	    			// 	},
+	    			// 	error:function()
+	    			// 	{
+	    			// 		console.log('数据异常');
+
+	    			// 	},
+	    			// 	dataType:'json'
+
+	    			// });
+	    			 break;
+	    		case "b" : 
+	    			$('#zan').attr({src:"/images/weidian.png"});
+	    			$('#zan').attr({value:"a"});
+	    			 break;
+	    	}
+	    
+	    		
+
+	    	
+	    });
+
+	    $(".shoucang").on('click',function(){
+	    	//前面是ajax改变reply表中的收藏数,然后弹框提示用户收藏成功
+	    	// $.ajax('/home/shoucang',{
+
+	    	// 	type:"GET",
+	    	// 	data:{}
+
+	    	// });
+
+	    });
+
+    	
+	</script>
+@endsection

@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 
 //路由群组
-// Route::group(['middleware'=>'adminlogin'],function(){
+Route::group(['middleware'=>'adminlogin'],function(){
 
 
 //网站配置
@@ -58,7 +58,7 @@ Route::post('/admin/user/update',"Admin\UserController@update");
 Route::get('/admin/user/delete/{id}',"Admin\UserController@delete");
 Route::get('/admin/user/index',"Admin\UserController@index");
 
-// });
+});
 
 
 
@@ -139,22 +139,6 @@ Route::get('/admin/pro',"Admin\ProController@index");
 Route::get('/admin/pro/del/{id}',"Admin\ProController@del");
 
 
-//候-11
-Route::get('home/fatie','Home\TieziController@index');
-
-
-Route::get('/home/liebiao','Home\TieziController@liebiao');
-
-
-Route::get('home/xiangqing','Home\HuitieController@index');
-
-
-Route::post('home/tiezi/insert','Home\TieziController@insert');
-
-
-Route::post('/chuantu', 'Home\TieziController@chuantu');
-
-
 
 // 加好友
 Route::get('/home/frid','Home\FriController@index');
@@ -225,4 +209,50 @@ Route::get('/home/delpm/{id}','Home\sendController@delpm');
 
  //执行修改
  Route::post('/admin/py/doxg/{id}','Admin\PyController@doxg');
+
+
+//hcc
+//进入发帖页
+Route::get('/home/fatie','Home\TieziController@index');
+
+
+//进入帖子列表页
+Route::get('/home/liebiao','Home\TieziController@liebiao');
+
+
+//进入回帖也
+Route::get('/home/xiangqing/{id}','Home\HuitieController@index');
+
+
+//发帖插入数据库
+Route::post('/home/tiezi/insert','Home\TieziController@insert');
+
+
+//发帖页上传头图
+Route::post('/chuantu', 'Home\TieziController@chuantu');
+
+
+// 后台帖子列表页
+Route::get('/admin/tiezi/list','Admin\TieziController@list');
+
+
+//后台帖子管理页
+Route::get('/admin/tiezi/edit/{id}',"Admin\TieziController@edit");
+
+
+//执行帖子修改
+Route::post('/admin/tiezi/doedit','Admin\TieziController@doedit');
+
+
+//删除
+Route::get('/admin/tiezi/delete/{id}','Admin\TieziController@del');
+
+
+//评论帖子
+Route::post('/home/huitie/pinglun','Home\HuitieController@pinglun');
+//点赞
+Route::get('/home/huitie/dianzan','Home\HuitieController@dianzan');
+//收藏
+Route::get('/home/shoucang','Home/HuitieController@shoucang');
+
 

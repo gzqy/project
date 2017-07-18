@@ -20,7 +20,7 @@ class adminloginMiddleware
         {
             return redirect('/admin/login')->with(['info'=>'尚未登录']);
         }
-        return $next($request);
+        
 
         if($request->auth <= 1)
         {
